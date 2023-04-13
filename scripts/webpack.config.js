@@ -66,10 +66,10 @@ module.exports = {
     }),
     isProduction
       ? new HtmlWebpackPlugin({
-          template: "index.html",
+          template: "public/index.html",
           minify: true, // 개발에서만 쓰이는 불필요한 코드 제거(줄바꿈, 띄어쓰기, 콘솔로그, 무의미한 메서드 호출 등)
         })
-      : new HtmlWebpackPlugin({ template: "index.html" }),
+      : new HtmlWebpackPlugin({ template: "public/index.html" }),
     new webpack.DefinePlugin({
       "process.env": JSON.stringify(process.env),
     }),

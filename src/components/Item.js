@@ -1,7 +1,6 @@
-import { AiOutlineCloud } from "react-icons/ai";
+import { useEffect, useState } from "react";
 import styles from "./Item.module.css";
 import getTime from "./Time";
-import { useEffect, useState } from "react";
 import useStore from "../Store/store";
 import getWeather from "../API/API";
 import useAsync from "../Hooks/useAsync";
@@ -28,19 +27,21 @@ export default function ListItem({ cityName, offsetTime, descript, Lat, Lon }) {
   function weatherSort(weather) {
     switch (weather) {
       case "Clouds":
-        return " 구름 ☁️";
+        return "구름 ☁️";
       case "Thunderstorm":
-        return " 번개 ⚡";
+        return "번개 ⚡";
       case "Rain":
-        return " 비 💧";
+        return "비 💧";
       case "Clear":
-        return " 맑음 🔆";
+        return "맑음 🔆";
       case "Haze":
-        return " 안개 🌫️";
+        return "안개 🌫️";
       case "Snow":
-        return " 눈 ❄️";
+        return "눈 ❄️";
+      case "Sand":
+        return "황사 💨";
       default:
-        return " 맑음🔆";
+        return "맑음🔆";
     }
   }
 
@@ -57,11 +58,13 @@ export default function ListItem({ cityName, offsetTime, descript, Lat, Lon }) {
           </h3>
           <h3>
             <span>현재 기온 : </span>
-            최저 기온 {toCelsius(data.main.temp_min)}˚C / 최고 기온 {toCelsius(data.main.temp_max)}˚C
+            최저 기온 {toCelsius(data.main.temp_min)}
+            <span className={styles.white}>˚C</span> / 최고 기온 {toCelsius(data.main.temp_max)}
+            <span className={styles.white}>˚C</span>
           </h3>
           <h3 className={styles.weather}>
-            <span>현재 날씨 :&nbsp;</span>
-            {weatherSort(data.weather[0].main)}&nbsp;&nbsp; 풍향 {data.wind.deg}&nbsp;&nbsp; 풍속 {data.wind.speed} m/s
+            <span>현재 날씨 : </span>
+            {weatherSort(data.weather[0].main)}&nbsp; 풍향 {data.wind.deg}&nbsp; 풍속 {data.wind.speed} m/s
           </h3>
         </div>
       )}

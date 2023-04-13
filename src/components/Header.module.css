@@ -115,6 +115,10 @@
     line-height: 24px;
     font-size: 14px;
   }
+  .headerContainer img {
+    width: 200px;
+    height: 200px;
+  }
   .headerContainer .mediaVisible {
     display: block;
   }

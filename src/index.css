@@ -5,6 +5,7 @@ body {
   background-color: #12351a;
   font-family: "Nanum Myeongjo", serif;
   word-break: keep-all;
+  overflow-x: hidden;
 }
 
 @media (max-width: 767px) {

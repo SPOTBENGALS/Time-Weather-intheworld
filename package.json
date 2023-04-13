@@ -2,10 +2,13 @@
   "name": "timenweather",
   "version": "1.0.0",
   "description": "세계 주요 도시 시간과 날씨",
+  "homepage": "https://spotbengals.github.io/Time-Weather-intheworld/",
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=development webpack serve --config ./scripts/webpack.config.js --progress --mode development",
-    "build": "NODE_ENV=production webpack --config ./scripts/webpack.config.js --progress --mode production"
+    "build": "NODE_ENV=production webpack --config ./scripts/webpack.config.js --progress --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "Jiyeon Sim",
   "license": "ISC",
@@ -24,6 +27,7 @@
     "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
     "file-loader": "^6.2.0",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.2",
     "webpack": "^5.77.0",

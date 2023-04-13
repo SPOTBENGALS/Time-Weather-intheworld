@@ -1,4 +1,4 @@
-# Time & Weather in th world
+# Time & Weather in the world
 
 세계 주요 도시들의 시간과 날씨 정보를 제공합니다.
 
@@ -21,4 +21,4 @@
 - Date와 offsetTime으로 세계도시 시간 제공합니다.
 - Openweathermap API에 위도와 경도를 변수로 활용하여 위치별 날씨(최저기온, 최고기온, 날씨, 풍향, 풍속)를 제공합니다.
 - 24시간 모드와 오후/오전 시간 모드로 전환하여 각 도시의 시간을 확인할 수 있습니다.
-"# Time-n-Weather-in-the-world" 
+  "# Time-n-Weather-in-the-world"
